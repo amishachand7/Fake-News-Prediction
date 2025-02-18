@@ -63,15 +63,13 @@ The dataset (train1.csv) consists of:
 
 📈 Model Performance
 
-The accuracy of the model is displayed after training, typically around X% (varies based on dataset and training).
+The accuracy of the model is displayed after training, typically around 84.51% (varies based on dataset and training).
 
 🚀 Future Improvements
 
 🔹 Implement Deep Learning models like LSTMs for better accuracy.
 🔹 Improve preprocessing with lemmatization instead of stemming.
 🔹 Deploy the model using Flask or FastAPI for real-world applications.
-
-👨‍💻 Author
 
 This project was developed as part of a machine learning study and aims to contribute to fake news detection research.
 
