@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+
+    <div class="container">
+        <header class="header">
+            <h1>📰 Fake News Detector</h1>
+            <p>Use AI to detect whether the news is <strong>Real</strong> or <strong>Fake</strong></p>
+        </header>
+
+        <main class="card">
+            <form action="/predict" method="POST">
+                <label for="news">📝 Enter News Content:</label>
+                <textarea id="news" name="news" placeholder="Paste news article text here..." required></textarea>
+                <button type="submit">Analyze</button>
+            </form>
+
+            {% if prediction %}
+            <div class="result {{ 'real' if prediction == 'Real News' else 'fake' }}">
+                <p>{{ prediction }}</p>
+                <div class="icon">{{ '✔️' if prediction == 'Real News' else '❌' }}</div>
+            </div>
+            {% endif %}
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='background.js') }}"></script>
+</body>
+</html>
